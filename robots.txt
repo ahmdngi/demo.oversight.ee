@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://demo.oversight.ee/sitemap.xml
