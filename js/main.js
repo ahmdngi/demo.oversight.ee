@@ -226,6 +226,10 @@
         var halfW    = 0;      
         var rafId    = null;
 
+        // Touch Drag State
+        var isDragging = false;
+        var dragLastX  = 0;
+
         function getHalfW() {
             // Items are duplicated, so half the scrollWidth = one full set
             return track.scrollWidth / 2;
@@ -278,6 +282,39 @@
         wrapper.addEventListener('mouseleave', function () {
             isHovered = false;
             manualDir = 0; // Release manual scroll if mouse leaves wrapper entirely
+        });
+
+        // ── Touch Drag ──
+        track.addEventListener('touchstart', function(e) {
+            isDragging = true;
+            isHovered = true; // Pause auto-play
+            dragLastX = e.touches[0].clientX;
+        }, {passive: true});
+
+        track.addEventListener('touchmove', function(e) {
+            if (!isDragging) return;
+            var currentX = e.touches[0].clientX;
+            var diff = currentX - dragLastX;
+            dragLastX = currentX;
+
+            // diff > 0 means finger moved right -> track should move right -> offset decreases
+            offset -= diff;
+
+            halfW = getHalfW();
+            if (halfW > 0) {
+                if (offset >= halfW) offset -= halfW;
+                else if (offset < 0) offset += halfW;
+            }
+            applyOffset();
+        }, {passive: true});
+
+        track.addEventListener('touchend', function() {
+            isDragging = false;
+            isHovered = false; // Resume auto-play
+        });
+        track.addEventListener('touchcancel', function() {
+            isDragging = false;
+            isHovered = false;
         });
 
         // ── Expose manual direction control ──

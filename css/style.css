@@ -476,18 +476,11 @@ main {
     }
 
     .navbar-collapse {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(12px);
-        padding: 15px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 0 0 12px 12px;
-        max-height: calc(100vh - 82px);
-        overflow-y: auto;
-        z-index: 9999;
+        display: none !important;
+    }
+
+    .offcanvas-footer {
+        display: none !important;
     }
 }
 
@@ -624,11 +617,12 @@ main {
     }
 
     .sh-navbar .navbar-brand img {
-    max-height: 65px !important;
-    width: auto !important;
-    object-fit: contain;
-    transition: all 0.3s ease;
-}
+        max-height: 65px !important;
+        max-width: 60vw !important;
+        width: auto !important;
+        object-fit: contain;
+        transition: all 0.3s ease;
+    }
 
     .sh-navbar .navbar-scrolled .navbar-brand img {
         max-height: 50px !important;
