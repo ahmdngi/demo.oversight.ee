@@ -96,6 +96,14 @@ main {
     height: 32px;
 }
 
+.x-logo {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    display: inline-block;
+    vertical-align: -0.125em;
+}
+
 .btn-sm-square {
     width: 34px;
     height: 34px;
@@ -1457,12 +1465,12 @@ main {
     align-items: stretch;
 }
 
-.services-track.is-manual {
+.marquee-track.is-manual {
     animation: none !important;
     transition: transform 0.45s ease;
 }
 
-.services-track.loop-reset {
+.marquee-track.loop-reset {
     transition: none !important;
 }
 
