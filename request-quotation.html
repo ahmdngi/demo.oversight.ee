@@ -4,8 +4,8 @@
 <meta name="theme-color" content="#0A2A4A">
 <title>Request a Quotation | SAC Arabia Industrial Services</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta content="request quotation Saudi Arabia, industrial quotation KSA, SAC Arabia quote, طلب عرض سعر, الخدمات الصناعية" name="keywords">
-<meta content="Request a quotation for industrial services, contracting, shutdown maintenance, and material supply in Saudi Arabia. اطلب عرض سعر لخدمات SAC Arabia الصناعية والمقاولات في السعودية." name="description">
+<meta content="request quotation Saudi Arabia, industrial quotation KSA, SAC Arabia quote, Ø·Ù„Ø¨ Ø¹Ø±Ø¶ Ø³Ø¹Ø±, Ø§Ù„Ø®Ø¯Ù…Ø§Øª Ø§Ù„ØµÙ†Ø§Ø¹ÙŠØ©" name="keywords">
+<meta content="Request a quotation for industrial services, contracting, shutdown maintenance, and material supply in Saudi Arabia. Ø§Ø·Ù„Ø¨ Ø¹Ø±Ø¶ Ø³Ø¹Ø± Ù„Ø®Ø¯Ù…Ø§Øª SAC Arabia Ø§Ù„ØµÙ†Ø§Ø¹ÙŠØ© ÙˆØ§Ù„Ù…Ù‚Ø§ÙˆÙ„Ø§Øª ÙÙŠ Ø§Ù„Ø³Ø¹ÙˆØ¯ÙŠØ©." name="description">
 <link rel="canonical" href="https://sacarabia.com/request-quotation.html">
 
     <!-- Local SEO (KSA) -->
@@ -16,7 +16,7 @@
 
     <!-- Open Graph for Social Media -->
     <meta property="og:title" content="Request a Quotation | SAC Arabia Industrial Services">
-    <meta property="og:description" content="Request a quotation for industrial services, contracting, shutdown maintenance, and material supply in Saudi Arabia. اطلب عرض سعر لخدمات SAC Arabia الصناعية والمقاولات في السعودية.">
+    <meta property="og:description" content="Request a quotation for industrial services, contracting, shutdown maintenance, and material supply in Saudi Arabia. Ø§Ø·Ù„Ø¨ Ø¹Ø±Ø¶ Ø³Ø¹Ø± Ù„Ø®Ø¯Ù…Ø§Øª SAC Arabia Ø§Ù„ØµÙ†Ø§Ø¹ÙŠØ© ÙˆØ§Ù„Ù…Ù‚Ø§ÙˆÙ„Ø§Øª ÙÙŠ Ø§Ù„Ø³Ø¹ÙˆØ¯ÙŠØ©.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="SAC Arabia">
     <meta property="og:locale" content="en_SA">
@@ -256,6 +256,11 @@ body{background:url('img/background.jpg') center/cover no-repeat fixed;backgroun
         <p style="color:rgba(255,255,255,0.6);font-size:1rem;max-width:450px;margin:0 auto">Your quotation request has been submitted successfully. Our team will review your requirements and get back to you within <strong style="color:#D07517">24 hours</strong>.</p>
     </div>
     <form id="quotationForm" action="send-mail.php" method="POST">
+        <!-- Honeypot field for bot protection -->
+        <div style="display:none;" aria-hidden="true">
+            <label for="website_url">Leave this field blank if you are human:</label>
+            <input type="text" name="website_url" id="website_url" tabindex="-1" autocomplete="off">
+        </div>
         <div class="row g-4 justify-content-center">
             <div class="col-lg-10">
                 <div class="rq-section rq-card wow fadeInUp" data-wow-delay="0.1s">
@@ -361,6 +366,10 @@ body{background:url('img/background.jpg') center/cover no-repeat fixed;backgroun
                     <div class="rq-summary" id="selectedServicesSummary">
                         <h6><i class="fas fa-check-circle" style="color:#D07517;margin-right:4px;"></i> Selected Services</h6>
                         <div id="serviceTags"></div>
+                    </div>
+                    <div style="display:none;" aria-hidden="true">
+                        <label for="website_url">Leave this field empty if you are human:</label>
+                        <input type="text" id="website_url" name="website_url" autocomplete="off" tabindex="-1">
                     </div>
                     <button type="submit" class="btn rq-submit-btn text-white">
                         <i class="fas fa-paper-plane me-2"></i> Submit Request
@@ -507,7 +516,7 @@ document.getElementById('quotationForm').addEventListener('submit',function(e){
         else alert('Something went wrong. Please try again.');
     })
     .catch(function(){
-        showSuccess();
+        alert('Something went wrong. Please try again or contact us directly at info@sacarabia.com');
     })
     .finally(function(){
         btn.disabled = false;
