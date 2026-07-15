@@ -28,7 +28,7 @@
 <link href="lib/animate/animate.min.css" rel="stylesheet">
 <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/style.min.css?v=8" rel="stylesheet">
+<link href="css/style.min.css?v=10" rel="stylesheet">
 <style>
 #successMessage.show{display:block !important}
 body{background:url('img/background.jpg') center/cover no-repeat fixed;background-attachment:fixed}
@@ -106,6 +106,66 @@ body{background:url('img/background.jpg') center/cover no-repeat fixed;backgroun
         <span class="hamburger-menu"><span></span><span></span><span></span></span>
     </button>
     <a href="index.html" class="navbar-brand p-0"><img src="img/logo1.png" alt="SAC Arabia"></a>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                <div class="dropdown-menu m-0">
+                    <a href="about.html" class="dropdown-item">About Us</a>
+                    <a href="ourvision.html" class="dropdown-item">OUR VISION</a>
+                    <a href="ourmission.html" class="dropdown-item">OUR MISSION</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                <div class="dropdown-menu m-0">
+                    <div class="dropdown-item dropdown-submenu position-relative">
+                        <a href="materialsupply.html">Material Supply</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="civil.html">Civil</a></li>
+                            <li><a class="dropdown-item" href="electrical.html">Electrical</a></li>
+                            <li><a class="dropdown-item" href="mechanical.html">Mechanical</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-item dropdown-submenu position-relative">
+                        <a href="constructionandengineering.html">Construction and Engineering</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="industrialcoating.html">Industrial Coating</a></li>
+                            <li><a class="dropdown-item" href="pipingnetwork.html">Piping Network</a></li>
+                            <li><a class="dropdown-item" href="steelstructureandbuildings.html">Steel Structure and Buildings</a></li>
+                            <li><a class="dropdown-item" href="electromechanical.html">Electromechanical Services</a></li>
+                            <li><a class="dropdown-item" href="testingandcommissioning.html">Testing &amp; Commissioning</a></li>
+                            <li><a class="dropdown-item" href="earthwork.html">Earthworks and TOCK System</a></li>
+                            <li><a class="dropdown-item" href="asphaltpaving.html">Asphalt Paving</a></li>
+                            <li><a class="dropdown-item" href="buildingsrenovation.html">Buildings Renovation</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-item dropdown-submenu position-relative">
+                        <a href="shutdown-and-maintenance.html">Shutdown &amp; Maintenance</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="safetyreliefvalves.html">Safety Relief Valves Setting, Testing and Calibration</a></li>
+                            <li><a class="dropdown-item" href="tanksmaintenance.html">Tanks Maintenance and Cleaning</a></li>
+                            <li><a class="dropdown-item" href="catalysthandling.html">Catalyst Handling Services</a></li>
+                            <li><a class="dropdown-item" href="hydrojetting.html">Hydro Jetting</a></li>
+                            <li><a class="dropdown-item" href="mechanicalservices.html">Mechanical Services &amp; Industrial Waste Management</a></li>
+                            <li><a class="dropdown-item" href="chemicalcleaning.html">Chemical Cleaning</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-item dropdown-submenu position-relative">
+                        <a href="rental-supply.html">Rental Supply</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="manpower.html">Manpower</a></li>
+                            <li><a class="dropdown-item" href="heavyequipment.html">Heavy Equipment</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <a href="career.html" class="nav-item nav-link">Careers</a>
+            <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+        </div>
+        <a href="request-quotation.html" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">Ask for a Quotation</a>
+    </div>
     </nav>
 <div class="offcanvas offcanvas-start sh-offcanvas" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
     <div class="offcanvas-header">
@@ -135,7 +195,7 @@ body{background:url('img/background.jpg') center/cover no-repeat fixed;backgroun
                         </div>
                     </div>
                     <div class="sh-offcanvas-subgroup">
-                        <a href="constructionandengineering.html" class="sh-offcanvas-sublink" onclick="toggleSubSubmenu(event)">Contracting <i class="fas fa-chevron-down ms-2" style="font-size:0.6rem;"></i></a>
+                        <a href="constructionandengineering.html" class="sh-offcanvas-sublink" onclick="toggleSubSubmenu(event)">Construction and Engineering <i class="fas fa-chevron-down ms-2" style="font-size:0.6rem;"></i></a>
                         <div class="sh-offcanvas-subsub">
                             <a href="industrialcoating.html" class="sh-offcanvas-sublink">Industrial Coating</a>
                             <a href="pipingnetwork.html" class="sh-offcanvas-sublink">Piping Network</a>
@@ -167,7 +227,7 @@ body{background:url('img/background.jpg') center/cover no-repeat fixed;backgroun
                     </div>
                 </div>
             </div>
-            <a href="career.html" class="sh-offcanvas-link" style="color:#D07517;">Career</a>
+            <a href="career.html" class="sh-offcanvas-link" style="color:#D07517;">Careers</a>
             <a href="contact.html" class="sh-offcanvas-link">Contact Us</a>
         </nav>
     </div>
@@ -312,7 +372,7 @@ body{background:url('img/background.jpg') center/cover no-repeat fixed;backgroun
 <script src="lib/wow/wow.min.js"></script>
 <script src="lib/easing/easing.min.js"></script>
 <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="js/main.min.js"></script>
+<script src="js/main.min.js?v=10"></script>
 <script>
 function toggleSubmenu(e){e.preventDefault();var p=e.currentTarget.parentElement;p.querySelector('.sh-offcanvas-submenu').classList.toggle('open');}
 function toggleSubSubmenu(e){e.preventDefault();var p=e.currentTarget.parentElement;p.querySelector('.sh-offcanvas-subsub').classList.toggle('open');}
