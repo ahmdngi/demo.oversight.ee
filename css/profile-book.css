@@ -124,7 +124,7 @@ body::after {
    PAGE BASE
 ═══════════════════════════════════════════ */
 .page {
-    background: url('../img/profile.png?v=3') center/cover no-repeat;
+    background: url('../img/profile.jpg?v=3') center/cover no-repeat;
     color: var(--text);
     overflow: hidden;
     position: relative;
@@ -141,7 +141,7 @@ body::after {
 .page[data-density="hard"] {
     background:
         linear-gradient(160deg, rgba(6,24,40,.90) 0%, rgba(10,42,74,.85) 100%),
-        url('../img/profile.png?v=3') center/cover no-repeat;
+        url('../img/profile.jpg?v=3') center/cover no-repeat;
 }
 
 /* ── Page content wrapper ── */
@@ -173,7 +173,7 @@ body::after {
 .cover-page {
     background:
         linear-gradient(155deg, rgba(6,24,40,.88) 0%, rgba(12,50,84,.78) 100%),
-        url('../img/profile.png?v=3') center/cover no-repeat !important;
+        url('../img/profile.jpg?v=3') center/cover no-repeat !important;
 }
 
 .cover-body {
@@ -260,7 +260,7 @@ body::after {
 .chapter-page {
     background:
         linear-gradient(155deg, rgba(6,24,40,.96) 0%, rgba(18,58,95,.96) 100%),
-        url('../img/profile.png?v=3') center/cover no-repeat !important;
+        url('../img/profile.jpg?v=3') center/cover no-repeat !important;
 }
 
 .chapter-body {
@@ -398,7 +398,7 @@ body::after {
 .back-cover-page {
     background:
         linear-gradient(155deg, rgba(6,24,40,.88) 0%, rgba(12,50,84,.85) 100%),
-        url('../img/profile.png?v=3') center/cover no-repeat !important;
+        url('../img/profile.jpg?v=3') center/cover no-repeat !important;
 }
 
 .bc-body {

@@ -14,15 +14,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const pages = document.querySelectorAll('.page');
     pgTotal.textContent = pages.length;
 
-    const pf = new St.PageFlip(bookEl, {
-        width: bw, height: bh,
-        size: W < 768 ? 'stretch' : 'fixed',
-        minWidth: 260, maxWidth: 520,
-        minHeight: 380, maxHeight: 720,
+        const pf = new St.PageFlip(bookEl, {
+        width: W < 768 ? W : bw, 
+        height: W < 768 ? window.innerHeight * 0.8 : bh,
+        size: 'stretch',
+        minWidth: 200, maxWidth: 1000,
+        minHeight: 300, maxHeight: 1000,
         maxShadowOpacity: 0.45,
         showCover: true,
-        mobileScrollSupport: false,
-        usePortrait: W < 768
+        usePortrait: true,
+        mobileScrollSupport: true
     });
 
     pf.loadFromHTML(pages);
