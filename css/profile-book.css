@@ -515,3 +515,44 @@ body::after {
     from { opacity: 0; transform: translateX(-20px); }
     to { opacity: 1; transform: translateX(0); }
 }
+
+
+/* ── Mobile Responsive Adjustments ── */
+@media (max-width: 768px) {
+    .cover-title { font-size: 3rem !important; }
+    .page-title { font-size: 1.2rem !important; }
+    .svc-desc { font-size: 0.8rem !important; margin-bottom: 10px !important; }
+    .svc-list li { font-size: 0.75rem !important; padding-left: 14px !important; margin-bottom: 6px !important; }
+    .svc-list li::before { font-size: 0.5rem !important; top: 4px !important; }
+    
+    .cover-body { padding: 16px !important; }
+    .chapter-body { padding: 16px !important; }
+    
+    .controls { 
+        bottom: 10px !important; 
+        gap: 10px !important;
+        padding: 8px 16px !important;
+    }
+    .ctrl-btn { padding: 6px 12px !important; font-size: 0.85rem !important; }
+    
+    /* Make entrance animation smaller so it fits mobile */
+    
+}
+
+@media (max-width: 480px) {
+    .cover-title { font-size: 2.2rem !important; line-height: 1 !important; }
+    .cover-eyebrow { font-size: 0.75rem !important; }
+    .cover-desc { font-size: 0.75rem !important; }
+    .stat-box strong { font-size: 1.2rem !important; }
+    .stat-box span { font-size: 0.6rem !important; }
+    
+    .page-num { font-size: 0.7rem !important; }
+    .page-num.left { left: 10px !important; bottom: 10px !important; }
+    .page-num.right { right: 10px !important; bottom: 10px !important; }
+}
+
+
+@media (max-width: 768px) {
+    .stage { padding: 0 !important; width: 100vw !important; height: 100vh !important; display: flex; align-items: center; justify-content: center; }
+    #book { width: 100vw !important; height: 85vh !important; }
+}

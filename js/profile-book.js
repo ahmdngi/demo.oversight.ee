@@ -9,20 +9,20 @@ document.addEventListener('DOMContentLoaded', function () {
     let bw = 440, bh = 620;
     if (W < 1100) { bw = 390; bh = 560; }
     if (W < 768)  { bw = 320; bh = 480; }
-    if (W < 480)  { bw = 280; bh = 420; }
+    if (W < 480)  { bw = W - 40; bh = (W - 40) * 1.45; }
 
     const pages = document.querySelectorAll('.page');
     pgTotal.textContent = pages.length;
 
     const pf = new St.PageFlip(bookEl, {
         width: bw, height: bh,
-        size: 'fixed',
+        size: W < 768 ? 'stretch' : 'fixed',
         minWidth: 260, maxWidth: 520,
         minHeight: 380, maxHeight: 720,
         maxShadowOpacity: 0.45,
         showCover: true,
         mobileScrollSupport: false,
-        usePortrait: false
+        usePortrait: W < 768
     });
 
     pf.loadFromHTML(pages);
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- Entrance Animation ---
     // Start VERY large and hidden
-    bookEl.style.transform = 'scale(3) translateY(50px)';
+    bookEl.style.transform = W < 768 ? 'scale(1.5) translateY(30px)' : 'scale(3) translateY(50px)';
     bookEl.style.opacity = '0';
     bookEl.style.transition = 'transform 1.2s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 1s ease-out';
     
