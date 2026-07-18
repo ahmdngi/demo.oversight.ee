@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SAC Arabia – Company Profile PDF</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <style>
+        :root {
+            --primary:    #0A2A4A;
+            --primary-dk: #061928;
+            --gold:       #D07517;
+            --gold-lt:    #f0a030;
+            --text:       #2c3a47;
+            --text-muted: #6b7b8d;
+            --border:     rgba(10,42,74,.12);
+            --paper:      #fefcf8;
+            --h: Montserrat, sans-serif;
+            --b: Open Sans, sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--b); background: #ccc; }
+        .pg { width: 210mm; height: 297mm; background: url(img/profile.png) center/cover no-repeat; color: var(--text); position: relative; overflow: hidden; page-break-after: always; break-after: page; display: flex; flex-direction: column; }
+        .pg.dark { background: linear-gradient(155deg, rgba(6,24,40,.92) 0%, rgba(10,42,74,.88) 100%), url(img/profile.png) center/cover no-repeat; color: #fff; }
+        .pc { flex: 1; display: flex; flex-direction: column; padding: 14mm 16mm; }
+        .pc.center { justify-content: center; align-items: center; text-align: center; }
+        .ph { display: flex; align-items: center; justify-content: space-between; padding-bottom: 8px; border-bottom: 1.5px solid var(--border); margin-bottom: 16px; }
+        .ph .mark { font-family: var(--h); font-size: 9pt; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+        .ph .pn { font-size: 9pt; font-weight: 600; color: var(--text-muted); }
+        .cover-body { flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding: 14mm 16mm; }
+        .cover-top { display: flex; align-items: flex-start; justify-content: space-between; }
+        .cover-logo-wrap { background: rgba(255,255,255,.97); border-radius: 12px; padding: 10px 20px; }
+        .cover-logo-wrap img { height: 44px; }
+        .cover-badge { display: inline-flex; align-items: center; gap: 7px; padding: 8px 16px; border-radius: 999px; background: rgba(208,117,23,.15); border: 1px solid rgba(208,117,23,.30); color: var(--gold-lt); font-size: 9pt; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+        .cover-mid { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 8mm 0; }
+        .cover-eyebrow { font-size: 9pt; font-weight: 700; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+        .cover-title { font-family: var(--h); font-size: 54pt; font-weight: 900; line-height: 1.0; letter-spacing: -2px; color: #fff; margin-bottom: 16px; }
+        .cover-divider { width: 64px; height: 5px; border-radius: 999px; background: linear-gradient(90deg, var(--gold), var(--gold-lt)); margin-bottom: 16px; }
+        .cover-desc { font-size: 13pt; line-height: 1.75; color: rgba(255,255,255,.80); max-width: 130mm; }
+        .cover-stats { display: flex; gap: 8px; margin-top: 18px; }
+        .stat-box { flex: 1; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 14px 10px; text-align: center; }
+        .stat-box strong { display: block; font-family: var(--h); font-size: 18pt; color: var(--gold-lt); margin-bottom: 4px; }
+        .stat-box span { font-size: 7.5pt; color: rgba(255,255,255,.65); letter-spacing: 1.2px; text-transform: uppercase; }
+        .cover-foot { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,.55); font-size: 9pt; letter-spacing: 2.5px; text-transform: uppercase; }
+        .cover-foot .line { flex: 1; height: 1px; background: rgba(255,255,255,.2); }
+        .cc { position: absolute; width: 52px; height: 52px; pointer-events: none; }
+        .cc.tl { top: 14px; left: 14px; border-top: 2.5px solid rgba(208,117,23,.45); border-left: 2.5px solid rgba(208,117,23,.45); }
+        .cc.tr { top: 14px; right: 14px; border-top: 2.5px solid rgba(208,117,23,.45); border-right: 2.5px solid rgba(208,117,23,.45); }
+        .cc.bl { bottom: 14px; left: 14px; border-bottom: 2.5px solid rgba(208,117,23,.45); border-left: 2.5px solid rgba(208,117,23,.45); }
+        .cc.br { bottom: 14px; right: 14px; border-bottom: 2.5px solid rgba(208,117,23,.45); border-right: 2.5px solid rgba(208,117,23,.45); }
+        .chapter-body { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 14mm 16mm; position: relative; }
+        .chapter-number { font-family: var(--h); font-size: 110pt; font-weight: 900; color: rgba(255,255,255,.05); line-height: 1; position: absolute; top: 16mm; right: 18mm; }
+        .chapter-icon { font-size: 44pt; color: var(--gold-lt); margin-bottom: 20px; }
+        .chapter-tag { font-size: 9pt; font-weight: 700; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold); background: rgba(208,117,23,.1); border: 1px solid rgba(208,117,23,.22); border-radius: 999px; padding: 6px 18px; margin-bottom: 16px; }
+        .chapter-title { font-family: var(--h); font-size: 38pt; font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: 14px; }
+        .chapter-line { width: 60px; height: 5px; border-radius: 999px; background: linear-gradient(90deg, var(--gold), var(--gold-lt)); margin: 0 auto 14px; }
+        .chapter-sub { font-size: 11pt; color: rgba(255,255,255,.58); letter-spacing: 1.5px; }
+        .page-title { font-family: var(--h); font-size: 24pt; font-weight: 900; color: var(--primary); letter-spacing: -.5px; margin: 0 0 6px; }
+        .page-underline { width: 48px; height: 4px; border-radius: 999px; background: linear-gradient(90deg, var(--gold), var(--gold-lt)); margin-bottom: 16px; }
+        .svc-img { width: 100%; height: 95mm; object-fit: cover; border-radius: 14px; border: 2px solid rgba(208,117,23,.38); margin-bottom: 14px; }
+        .svc-sub-title { font-family: var(--h); font-size: 13pt; font-weight: 700; color: var(--gold); margin: 0 0 10px; }
+        .svc-desc { font-size: 11pt; line-height: 1.75; color: var(--text); margin: 0 0 12px; }
+        .svc-list { padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 7px; }
+        .svc-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 11pt; line-height: 1.55; color: var(--text); }
+        .svc-list li::before { content: ''; flex-shrink: 0; margin-top: 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+        .about-kpi { display: flex; gap: 10px; margin-top: 16px; padding-top: 0; }
+        .kpi-box { flex: 1; background: linear-gradient(135deg, rgba(10,42,74,.06), rgba(10,42,74,.13)); border: 1px solid var(--border); border-radius: 14px; padding: 16px 10px; text-align: center; }
+        .kpi-box strong { display: block; font-family: var(--h); font-size: 18pt; color: var(--primary); margin-bottom: 4px; }
+        .kpi-box span { font-size: 8pt; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; }
+        .vm-box { border-radius: 16px; padding: 18px 20px; border-left: 5px solid var(--gold); background: linear-gradient(135deg, rgba(10,42,74,.04), rgba(10,42,74,.10)); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); margin-bottom: 14px; }
+        .vm-box h3 { display: flex; align-items: center; gap: 9px; font-family: var(--h); font-size: 13pt; color: var(--primary); margin: 0 0 8px; }
+        .vm-box h3 i { color: var(--gold); }
+        .vm-box p { font-size: 11pt; line-height: 1.75; color: var(--text); margin: 0; }
+        .bc-body { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 14mm 16mm; }
+        .bc-logo { background: rgba(255,255,255,.97); border-radius: 16px; padding: 14px 28px; margin-bottom: 28px; }
+        .bc-logo img { height: 52px; }
+        .bc-line { width: 60px; height: 5px; border-radius: 999px; background: linear-gradient(90deg, var(--gold), var(--gold-lt)); margin: 0 auto 28px; }
+        .bc-contacts { display: flex; flex-direction: column; gap: 18px; }
+        .bc-contact-item { display: flex; align-items: center; gap: 12px; justify-content: center; color: rgba(255,255,255,.84); font-size: 14pt; }
+        .bc-contact-item i { color: var(--gold-lt); width: 20px; text-align: center; }
+        .bc-tagline { margin-top: 32px; font-size: 9pt; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,.4); }
+        @media print { body { background: none; } .pg { page-break-after: always; break-after: page; } }
+    </style>
+</head>
+<body>
+
+<!-- ══ FRONT COVER ══ -->
+<div class="pg dark">
+    <span class="cc tl"></span><span class="cc tr"></span>
+    <span class="cc bl"></span><span class="cc br"></span>
+    <div class="cover-body">
+        <div class="cover-top">
+            <div class="cover-logo-wrap"><img loading="lazy" src="img/logo1.png" alt="SAC Arabia"></div>
+            <div class="cover-badge"><i class="fas fa-certificate"></i> ISO Certified</div>
+        </div>
+        <div class="cover-mid">
+            <p class="cover-eyebrow">SAC Arabia Contracting &amp; Trading</p>
+            <h1 class="cover-title">Company<br>Profile</h1>
+            <div class="cover-divider"></div>
+            <p class="cover-desc">Leading industrial services &amp; material supply for Oil &amp; Gas, Petrochemical and Process Industries across KSA.</p>
+            <div class="cover-stats">
+            <div class="stat-box"><strong>20+</strong><span>Years Experience</span></div>
+            <div class="stat-box"><strong>10+</strong><span>Major Clients</span></div>
+            <div class="stat-box"><strong>100+</strong><span>Projects Delivered</span></div>
+            <div class="stat-box"><strong>4+</strong><span>Specialized Divisions</span></div>
+        </div>
+        </div>
+        <div class="cover-foot">
+            <span class="line"></span><span>Dammam · Saudi Arabia</span><span class="line"></span>
+        </div>
+    </div>
+</div>
+
+<!-- ══ ABOUT US ══ -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">SAC Arabia</span><span class="pn">01</span></div>
+        <h2 class="page-title">About Us</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/Our Mission.png" alt="About SAC Arabia" class="svc-img">
+        <p class="svc-desc">SAC Arabia Contracting &amp; Trading, established in <strong>2008</strong>, is a leading ISO certified provider of value-added industrial services and material supply for the Oil &amp; Gas, Petrochemical, and Process Industries across KSA and the wider Gulf region.</p>
+        <p class="svc-desc">We transform ambition into achievement, partnering with our customers to deliver projects that create enduring value for people and communities across the globe.</p>
+        <div class="about-kpi">
+            <div class="kpi-box"><strong>ISO</strong><span>Certified</span></div>
+            <div class="kpi-box"><strong>KSA</strong><span>Based</span></div>
+            <div class="kpi-box"><strong>24/7</strong><span>Support</span></div>
+        </div>
+    </div>
+</div>
+
+<!-- ══ VISION & MISSION ══ -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">SAC Arabia</span><span class="pn">02</span></div>
+        <h2 class="page-title">Vision &amp; Mission</h2>
+        <div class="page-underline"></div>
+        <div class="vm-box">
+            <h3><i class="fas fa-eye"></i> Our Vision</h3>
+            <p>To be the premier partner of choice for industrial services, delivering innovative and sustainable solutions that drive the progress of the Oil &amp; Gas and infrastructure sectors across the Kingdom and beyond.</p>
+        </div>
+        <div class="vm-box">
+            <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+            <p>To provide exceptional quality, safety, and reliability in every project. We strive to exceed client expectations through operational excellence, a dedicated workforce, and a commitment to continuous improvement.</p>
+        </div>
+        <div class="vm-box">
+            <h3><i class="fas fa-shield-alt"></i> Our Values</h3>
+            <p>Safety first. Integrity always. Quality without compromise. Innovation driven. People empowered.</p>
+        </div>
+    </div>
+</div>
+
+<!-- CHAPTER 1 -->
+<div class="pg dark">
+    <div class="chapter-body">
+        <span class="chapter-number">01</span>
+        <div class="chapter-icon"><i class="fas fa-boxes"></i></div>
+        <div class="chapter-tag">Chapter 01</div>
+        <h2 class="chapter-title">Material Supply</h2>
+        <div class="chapter-line"></div>
+        <p class="chapter-sub">Civil &middot; Electrical &middot; Mechanical</p>
+    </div>
+</div>
+
+<!-- Civil -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Material Supply</span><span class="pn">03</span></div>
+        <h2 class="page-title">Civil</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/civil 1.jpg" alt="Civil" class="svc-img">
+        <p class="svc-sub-title">General Construction Material</p>
+        <p class="svc-desc">SAC Arabia supplies premium civil construction materials tailored for complex industrial projects, ensuring structural integrity and compliance with international standards.</p>
+        <ul class="svc-list">
+            <li>Cement & Cement Based Products</li>
+            <li>Reinforcements</li>
+            <li>Structural Steel</li>
+            <li>Aggregates (Sand, Gravel, Crushed Stone)</li>
+            <li>Ready-Mix Concrete & Precast Elements</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Electrical -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Material Supply</span><span class="pn">04</span></div>
+        <h2 class="page-title">Electrical</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/ELECTRICAL 1.jpg" alt="Electrical" class="svc-img">
+        <p class="svc-sub-title">High & Low Voltage Solutions</p>
+        <p class="svc-desc">We deliver comprehensive electrical solutions, encompassing high and low voltage systems that guarantee operational safety and seamless integration.</p>
+        <ul class="svc-list">
+            <li>High & Low Voltage Cables</li>
+            <li>Transformers</li>
+            <li>Cable Trays</li>
+            <li>Switchgears</li>
+            <li>Control Panels</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Mechanical -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Material Supply</span><span class="pn">05</span></div>
+        <h2 class="page-title">Mechanical</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/MECHANICAL 1.jpg" alt="Mechanical" class="svc-img">
+        <p class="svc-sub-title">Mechanical Equipment & Components</p>
+        <p class="svc-desc">Our mechanical division provides critical equipment including top-tier valves, piping, and rotating machinery meeting rigorous industry specifications.</p>
+        <ul class="svc-list">
+            <li>Piping & Pipeline Components</li>
+            <li>Valves</li>
+            <li>HVAC Systems</li>
+            <li>Firefighting Systems</li>
+            <li>Pumps & Motors</li>
+        </ul>
+    </div>
+</div>
+
+<!-- CHAPTER 2 -->
+<div class="pg dark">
+    <div class="chapter-body">
+        <span class="chapter-number">02</span>
+        <div class="chapter-icon"><i class="fas fa-hard-hat"></i></div>
+        <div class="chapter-tag">Chapter 02</div>
+        <h2 class="chapter-title">Construction &amp;<br>Engineering</h2>
+        <div class="chapter-line"></div>
+        <p class="chapter-sub">8 Specialized Sub-Services</p>
+    </div>
+</div>
+
+<!-- Industrial Coating -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Construction &amp; Engineering</span><span class="pn">06</span></div>
+        <h2 class="page-title">Industrial Coating</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/working/INDUSTRIAL COATING.png" alt="Industrial Coating" class="svc-img">
+        <p class="svc-sub-title">Blasting & Coating Solutions</p>
+        <p class="svc-desc">We specialize in advanced blasting and anti-corrosion coating solutions designed to protect critical assets from harsh industrial environments.</p>
+        <ul class="svc-list">
+            <li>Surface Preparation & Blasting</li>
+            <li>Anti-Corrosion Coating</li>
+            <li>Fireproofing Coating</li>
+            <li>Structural Steel Coating</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Piping Network -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Construction &amp; Engineering</span><span class="pn">07</span></div>
+        <h2 class="page-title">Piping Network</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/working/PIPING NETWORK.png" alt="Piping Network" class="svc-img">
+        <p class="svc-sub-title">Fabrication & Installation</p>
+        <p class="svc-desc">Our expertise covers the complete fabrication and installation of complex stainless, alloy, and carbon steel piping networks.</p>
+        <ul class="svc-list">
+            <li>Stainless, Alloy & Carbon Steel Piping</li>
+            <li>Fiberglass Piping Installation</li>
+            <li>Field Fabrication & Painting</li>
+            <li>Certified Welding Procedures</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Steel Structure and Buildings -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Construction &amp; Engineering</span><span class="pn">08</span></div>
+        <h2 class="page-title">Steel Structure and Buildings</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/working/STEEL STRUCTURE AND BUILDINGS.png" alt="Steel Structure and Buildings" class="svc-img">
+        <p class="svc-sub-title">Structural Installation Works</p>
+        <p class="svc-desc">SAC Arabia executes robust structural steel installations, from foundations to process buildings, ensuring precise alignment and stability.</p>
+        <ul class="svc-list">
+            <li>Foundation Preparation & Pipe Racks</li>
+            <li>Warehouse Structures</li>
+            <li>Process Building Structures</li>
+            <li>Alignment Works</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Electromechanical Services -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Construction &amp; Engineering</span><span class="pn">09</span></div>
+        <h2 class="page-title">Electromechanical Services</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/working/CATHOLIC PROTECTIONS 1.jpg" alt="Electromechanical Services" class="svc-img">
+        <p class="svc-sub-title">Integrated Electromechanical Solutions</p>
+        <p class="svc-desc">We offer integrated electromechanical EPC services, from advanced cathodic protection to complete MEP system installations.</p>
+        <ul class="svc-list">
+            <li>Electrical Installation Works</li>
+            <li>Mechanical Systems Integration</li>
+            <li>Cathodic Protection Systems</li>
+            <li>Instrumentation & Control</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Testing & Commissioning -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Construction &amp; Engineering</span><span class="pn">10</span></div>
+        <h2 class="page-title">Testing & Commissioning</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/working/TESTING & COMMISSIONING SERVICES.png" alt="Testing & Commissioning" class="svc-img">
+        <p class="svc-sub-title">System Validation & Performance Testing</p>
+        <p class="svc-desc">Our comprehensive testing and commissioning services rigorously validate the performance, safety, and reliability of your industrial systems.</p>
+        <ul class="svc-list">
+            <li>Pre-commissioning & Loop Checks</li>
+            <li>Functional Testing</li>
+            <li>Performance Validation</li>
+            <li>Startup & Handover Support</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Earthworks and TOCK System -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Construction &amp; Engineering</span><span class="pn">11</span></div>
+        <h2 class="page-title">Earthworks and TOCK System</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/EARTHWORKS.jpeg" alt="Earthworks and TOCK System" class="svc-img">
+        <p class="svc-sub-title">Advanced Rock Breaking Technology</p>
+        <p class="svc-desc">We provide advanced earthworks utilizing the TOCK® Controlled Rock Breaking System—ideal for restricted environments without disrupting plant operations.</p>
+        <ul class="svc-list">
+            <li>Excavation & Grading</li>
+            <li>Non-Explosive Rock Breaking</li>
+            <li>Backfilling & Compaction</li>
+            <li>Underground Utilities</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Asphalt Paving -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Construction &amp; Engineering</span><span class="pn">12</span></div>
+        <h2 class="page-title">Asphalt Paving</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/Asphalt Paving.jpg" alt="Asphalt Paving" class="svc-img">
+        <p class="svc-sub-title">Roads, Highways & Industrial Paving</p>
+        <p class="svc-desc">Our paving division delivers high-performance, durable asphalt solutions for industrial facilities, highways, and commercial infrastructure.</p>
+        <ul class="svc-list">
+            <li>Road & Highway Construction</li>
+            <li>Industrial Facility Paving</li>
+            <li>Parking Areas & Airports</li>
+            <li>Pavement Maintenance & Repairs</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Buildings Renovation -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Construction &amp; Engineering</span><span class="pn">13</span></div>
+        <h2 class="page-title">Buildings Renovation</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/BUILDINGS RENOVATION.jpg" alt="Buildings Renovation" class="svc-img">
+        <p class="svc-sub-title">Complete Refurbishment Services</p>
+        <p class="svc-desc">We transform existing commercial and industrial structures, enhancing safety and operational efficiency with minimal disruption.</p>
+        <ul class="svc-list">
+            <li>Structural Modifications</li>
+            <li>Interior & Exterior Refurbishment</li>
+            <li>MEP Upgrades</li>
+            <li>Fit-Out Works</li>
+        </ul>
+    </div>
+</div>
+
+<!-- CHAPTER 3 -->
+<div class="pg dark">
+    <div class="chapter-body">
+        <span class="chapter-number">03</span>
+        <div class="chapter-icon"><i class="fas fa-tools"></i></div>
+        <div class="chapter-tag">Chapter 03</div>
+        <h2 class="chapter-title">Shutdown &amp;<br>Maintenance</h2>
+        <div class="chapter-line"></div>
+        <p class="chapter-sub">6 Specialized Sub-Services</p>
+    </div>
+</div>
+
+<!-- Safety Relief Valves -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Shutdown &amp; Maintenance</span><span class="pn">14</span></div>
+        <h2 class="page-title">Safety Relief Valves</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/working/NDT SERVICES.png" alt="Safety Relief Valves" class="svc-img">
+        <p class="svc-sub-title">Setting, Testing & Calibration</p>
+        <p class="svc-desc">We provide critical setting, testing, and calibration services for safety relief valves to guarantee regulatory compliance of pressurized systems.</p>
+        <ul class="svc-list">
+            <li>Safety Relief Valve Setting Studies</li>
+            <li>Hydrostatic Pressure Test</li>
+            <li>Fugitive Emission Test</li>
+            <li>Safety Valve Pop Test</li>
+            <li>Control Valve Functional Test</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Tanks Maintenance and Cleaning -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Shutdown &amp; Maintenance</span><span class="pn">15</span></div>
+        <h2 class="page-title">Tanks Maintenance and Cleaning</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/working/TANKS MAINTENANCE AND CLEANING.png" alt="Tanks Maintenance and Cleaning" class="svc-img">
+        <p class="svc-sub-title">Industrial Tank Services</p>
+        <p class="svc-desc">Our comprehensive tank services encompass safe decontamination, internal inspection, and structural repairs to extend asset life.</p>
+        <ul class="svc-list">
+            <li>Tank Cleaning & Decontamination</li>
+            <li>Internal Inspection</li>
+            <li>Structural Repair & Lining</li>
+            <li>Sludge Removal</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Catalyst Handling Services -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Shutdown &amp; Maintenance</span><span class="pn">16</span></div>
+        <h2 class="page-title">Catalyst Handling Services</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/working/CATALYST HANDLING SERVICES.png" alt="Catalyst Handling Services" class="svc-img">
+        <p class="svc-sub-title">Safe & Efficient Catalyst Management</p>
+        <p class="svc-desc">We deliver safe catalyst loading, unloading, and screening services, minimizing downtime and maximizing process efficiency.</p>
+        <ul class="svc-list">
+            <li>Catalyst Loading & Unloading</li>
+            <li>Sock & Dense Loading</li>
+            <li>Catalyst Screening & Sorting</li>
+            <li>Reactor Cleaning</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Hydro Jetting -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Shutdown &amp; Maintenance</span><span class="pn">17</span></div>
+        <h2 class="page-title">Hydro Jetting</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/working/HYDRO JETTING.png" alt="Hydro Jetting" class="svc-img">
+        <p class="svc-sub-title">High-Pressure Water Jetting</p>
+        <p class="svc-desc">Our high-pressure hydro jetting services provide effective cleaning and descaling for pipelines and heat exchangers, restoring optimal flow.</p>
+        <ul class="svc-list">
+            <li>Pipeline & Equipment Cleaning</li>
+            <li>Heat Exchanger Cleaning</li>
+            <li>Surface Descaling</li>
+            <li>Drain & Sewer Cleaning</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Mechanical Services & Industrial Waste Management -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Shutdown &amp; Maintenance</span><span class="pn">18</span></div>
+        <h2 class="page-title">Mechanical Services & Industrial Waste Management</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/working/MECHANICAL SERVICES.png" alt="Mechanical Services & Industrial Waste Management" class="svc-img">
+        <p class="svc-sub-title">Maintenance & Waste Management</p>
+        <p class="svc-desc">We offer comprehensive mechanical maintenance alongside specialized, compliant industrial waste management and disposal.</p>
+        <ul class="svc-list">
+            <li>Rotating Equipment Maintenance</li>
+            <li>Static Equipment Repair</li>
+            <li>Industrial Waste Collection</li>
+            <li>Safe Disposal & Treatment</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Chemical Cleaning -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Shutdown &amp; Maintenance</span><span class="pn">19</span></div>
+        <h2 class="page-title">Chemical Cleaning</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/working/CHEMICAL CLEANING.png" alt="Chemical Cleaning" class="svc-img">
+        <p class="svc-sub-title">Industrial Chemical Treatment</p>
+        <p class="svc-desc">Our advanced chemical cleaning treatments, including flushing and passivation, safely restore and enhance critical process systems.</p>
+        <ul class="svc-list">
+            <li>Flushing & Passivation</li>
+            <li>Pickling & Degreasing</li>
+            <li>Descaling Treatment</li>
+            <li>Biocide Treatment</li>
+        </ul>
+    </div>
+</div>
+
+<!-- CHAPTER 4 -->
+<div class="pg dark">
+    <div class="chapter-body">
+        <span class="chapter-number">04</span>
+        <div class="chapter-icon"><i class="fas fa-truck"></i></div>
+        <div class="chapter-tag">Chapter 04</div>
+        <h2 class="chapter-title">Rental Supply</h2>
+        <div class="chapter-line"></div>
+        <p class="chapter-sub">Manpower &middot; Heavy Equipment</p>
+    </div>
+</div>
+
+<!-- Manpower -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Rental Supply</span><span class="pn">20</span></div>
+        <h2 class="page-title">Manpower</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/ManpowerSupply.jpg" alt="Manpower" class="svc-img">
+        <p class="svc-sub-title">Skilled Industrial Workforce</p>
+        <p class="svc-desc">SAC Arabia supplies a highly skilled, vetted industrial workforce ranging from specialized engineers to certified tradesmen.</p>
+        <ul class="svc-list">
+            <li>Engineers & Supervisors</li>
+            <li>Skilled Tradesmen (Welders, Electricians, Fitters)</li>
+            <li>Safety Officers & Inspectors</li>
+            <li>General Labour</li>
+            <li>Admin & Support Staff</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Heavy Equipment -->
+<div class="pg">
+    <div class="pc">
+        <div class="ph"><span class="mark">Rental Supply</span><span class="pn">21</span></div>
+        <h2 class="page-title">Heavy Equipment</h2>
+        <div class="page-underline"></div>
+        <img loading="lazy" src="img/HEAVYEQUIPMENTRENTAL.jpg" alt="Heavy Equipment" class="svc-img">
+        <p class="svc-sub-title">Machinery & Fleet Rental</p>
+        <p class="svc-desc">We offer a versatile, well-maintained fleet of heavy machinery, cranes, and transport vehicles for reliable industrial rental.</p>
+        <ul class="svc-list">
+            <li>Cranes & Lifting Equipment</li>
+            <li>Excavators & Bulldozers</li>
+            <li>Trucks & Transport Fleet</li>
+            <li>Specialized Machinery</li>
+            <li>Operator Supply Available</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ══ BACK COVER ══ -->
+<div class="pg dark">
+    <span class="cc tl"></span><span class="cc tr"></span>
+    <span class="cc bl"></span><span class="cc br"></span>
+    <div class="bc-body">
+        <div class="bc-logo"><img loading="lazy" src="img/logo1.png" alt="SAC Arabia"></div>
+        <div class="bc-line"></div>
+        <div class="bc-contacts">
+            <div class="bc-contact-item"><i class="fas fa-map-marker-alt"></i> Dammam, Saudi Arabia</div>
+            <div class="bc-contact-item"><i class="fas fa-envelope"></i> info@sacarabia.com</div>
+            <div class="bc-contact-item"><i class="fas fa-phone"></i> +966 58 392 3480</div>
+            <div class="bc-contact-item"><i class="fas fa-globe"></i> www.sacarabia.com</div>
+        </div>
+        <p class="bc-tagline">Quality · Safety · Excellence</p>
+    </div>
+</div>
+
+</body>
+</html>
